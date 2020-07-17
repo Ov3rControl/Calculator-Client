@@ -8,8 +8,8 @@ import { of } from 'rxjs';
 })
 export class AppComponent {
   title = 'calculator-client';
-
   sum$: Object;
+  average$: Object;
 
   constructor(private calculatorService: CalculatorService) {}
 
@@ -17,5 +17,11 @@ export class AppComponent {
     this.calculatorService
       .addNumbers(num1, num2)
       .subscribe((res) => (this.sum$ = res));
+  }
+  findAverage(numbersList: string) {
+    console.log(numbersList);
+    this.calculatorService
+      .findAverage(numbersList)
+      .subscribe((res) => (this.average$ = res));
   }
 }

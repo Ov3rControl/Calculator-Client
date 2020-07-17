@@ -12,6 +12,14 @@ describe('CalculatorService', () => {
   });
 
   it('should return a number', async () => {
-    service.addNumbers(1, 2).subscribe((result) => expect(result).toEqual(3));
+    return service
+      .addNumbers(1, 2)
+      .subscribe((result) => expect(result).toEqual(3));
+  });
+
+  it('should return the average number', () => {
+    return service
+      .findAverage([1, 2, 3, 4, 5])
+      .subscribe((result) => expect(result).toEqual(3));
   });
 });

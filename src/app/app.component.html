@@ -1,8 +1,16 @@
 <header>Calculator Client</header>
 <div>
   <h3>Add Two Numbers</h3>
-  <input type="number" name="name" #num1 />
-  <input type="number" name="name" #num2 />
+  <input type="number" name="num1" #num1 />
+  <input type="number" name="num2" #num2 />
   <button (click)="addNumbers(num1.value, num2.value)">Add Numbers</button>
   <h5 *ngIf="sum$">The addition result is : {{ sum$ }}</h5>
+</div>
+<div>
+  <h3>
+    Find Average of List of numbers Should be comma seperated like 1,2,3,4,5
+  </h3>
+  <input type="text" name="numbersList" #numbersList />
+  <button (click)="findAverage(numbersList.value)">Find Average</button>
+  <h5 *ngIf="average$">The average number result is : {{ average$ }}</h5>
 </div>

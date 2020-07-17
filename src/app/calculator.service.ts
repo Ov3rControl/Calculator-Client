@@ -11,4 +11,10 @@ export class CalculatorService {
     const ADD_NUMBERS_URL = `http://localhost:3000/api/v1/add/${num1}/${num2}`;
     return this.http.get(ADD_NUMBERS_URL);
   }
+
+  findAverage(list: string) {
+    const FIND_AVERAGE_URL = `http://localhost:3000/api/v1/average`;
+    const numbersList = list.split(',');
+    return this.http.post(FIND_AVERAGE_URL, { numbersList });
+  }
 }
