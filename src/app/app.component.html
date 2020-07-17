@@ -1,1 +1,8 @@
-<div>Hello World</div>
+<header>Calculator Client</header>
+<div>
+  <h3>Add Two Numbers</h3>
+  <input type="number" name="name" #num1 />
+  <input type="number" name="name" #num2 />
+  <button (click)="addNumbers(num1.value, num2.value)">Add Numbers</button>
+  <h5 *ngIf="sum$">The addition result is : {{ sum$ }}</h5>
+</div>
